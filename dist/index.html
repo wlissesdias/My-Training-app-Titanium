@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- Configurações PWA (iOS) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Titanium" />
+    
+    <!-- Ícone Titanium Oficial (Emoji 🔱 com Filtro Cinza Escuro e Fundo PRETO) -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cfilter id='darkGray'%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.25' intercept='0'/%3E%3CfeFuncG type='linear' slope='0.25' intercept='0'/%3E%3CfeFuncB type='linear' slope='0.25' intercept='0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Ctext x='50' y='55' font-size='60' text-anchor='middle' dominant-baseline='middle' filter='url(%23darkGray)'%3E🔱%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cfilter id='darkGray'%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.25' intercept='0'/%3E%3CfeFuncG type='linear' slope='0.25' intercept='0'/%3E%3CfeFuncB type='linear' slope='0.25' intercept='0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' fill='%23000000'/%3E%3Ctext x='50' y='55' font-size='60' text-anchor='middle' dominant-baseline='middle' filter='url(%23darkGray)'%3E🔱%3C/text%3E%3C/svg%3E" />
+    
+    <!-- Manifesto PWA -->
+    <link rel="manifest" href="/assets/manifest-B7q069Pu.json" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    
+    <title>Titanium | Strength Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Polyfill para evitar crash 'process is not defined' -->
+    <script>
+      window.process = window.process || { env: {} };
+    </script>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000000; /* Preto Puro */
+        color: #f8fafc;
+        overscroll-behavior-y: none;
+        touch-action: manipulation;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.2); }
+        50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1?deps=react@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.23.0?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.378.0?deps=react@18.3.1",
+    "recharts": "https://esm.sh/recharts@2.12.7?deps=react@18.3.1,react-dom@18.3.1",
+    "vite": "https://esm.sh/vite@5.2.11",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@4.3.0",
+    "path": "https://esm.sh/path@0.12.7",
+    "firebase/": "https://esm.sh/firebase@10.12.0/",
+    "firebase": "https://esm.sh/firebase@10.12.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-C4DANBs2.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('Titanium ServiceWorker registrado:', registration.scope);
+            })
+            .catch(error => {
+              console.log('SW Info: ServiceWorker não pôde ser registrado neste ambiente.');
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
